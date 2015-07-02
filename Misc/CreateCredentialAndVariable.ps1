@@ -15,7 +15,7 @@ $newCredential.CredentialId
 $newCredential.Name
 
 # Create Variable
-Set-AutomationVariable –Name 'VMWareServerName' –Value 'MyServerName.Blah.local'
+#Set-AutomationVariable –Name 'VMWareServerName' –Value 'MyServerName.Blah.local'
 
 # Get Variable
-$server = Get-AutomationVariable –Name 'VMWareServerName'
+#$server = Get-AutomationVariable –Name 'VMWareServerName'

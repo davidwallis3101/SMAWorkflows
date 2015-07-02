@@ -5,8 +5,9 @@
 $WebServiceEndpoint = 'https://sma'
 
 # Create VMWare vSphere portable module and store on current users desktop
-New-SmaPortableModule -ModuleName "VMware.VimAutomation.Core" -OutputPath $([Environment]::GetFolderPath("Desktop")) -IsSnapIn
+New-SmaPortableModule -ModuleName "Dnsshell" -OutputPath $([Environment]::GetFolderPath("Desktop")) -IsSnapIn
 
 #Import the module into SMA
-$File = [Environment]::GetFolderPath("Desktop") + "\VMware.VimAutomation.Core-Portable.zip"
+$File = [Environment]::GetFolderPath("Desktop") + "\dnsshell.zip"
 Import-SmaModule -WebServiceEndpoint $WebServiceEndpoint -Path $File
+-
