@@ -8,7 +8,11 @@
 	
 	$records = InlineScript {
 		Import-Module dnsShell
-		get-dnsRecord -server $using:Server -RecordType A -Zone "zonename" -credential $using:Creds | select Name |where {$_.Name -like "StartOfName*"} 
+		get-dnsRecord `
+			-server $using:Server `
+			-RecordType A `
+			-Zone "zonename" `
+			-credential $using:Creds | select Name |where {$_.Name -like "StartOfName*"} 
 	}
 	
 	Write-Output $records
