@@ -3,13 +3,8 @@
 	#Retrieve DNS Server and credentials from Assets
 	$Creds = Get-AutomationPSCredential -Name 'dnsaccount'
 	
-	#$Server = Get-AutomationVariable –Name 'DNSServer'
-	$Server = "myserver.local"
+	[string]$Server = Get-AutomationVariable –Name 'DNSServer'
 	
-	$records = InlineScript {
-		Import-Module dnsShell
-		get-dnsRecord -server $using:Server -RecordType A -Zone "zonename" -credential $using:Creds | select Name |where {$_.Name -like "StartOfName*"} 
-	}
-	
-	Write-Output $records
+	get-dnsRecord -server $Server -RecordType A -Zone "zonename" -credential $Creds | select Name #|where {$_.Name -like "StartOfName*"} 
+	# Where command above causes issues.. need to determine what this is.
 }
