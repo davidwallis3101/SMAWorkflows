@@ -1,0 +1,18 @@
+﻿{
+	"ConnectionFields": [
+	{
+		"IsEncrypted": false,
+		"IsOptional": false,
+		"Name": "URI",
+		"TypeName": "System.String"
+	},
+	{
+		"IsEncrypted": true,
+		"IsOptional": false,
+		"Name": "APIKey",
+		"TypeName": "System.String"
+	}
+	],
+	"ConnectionTypeName": "Octopus Deploy Connection",
+	"IntegrationModuleName": "Octopus"
+}
